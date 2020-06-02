@@ -1,26 +1,43 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <van-nav-bar  left-text="返回" left-arrow>
+      <template #title>
+        <span>1</span>
+        <br>
+        <span>2</span>
+      </template>
+      <template #left>
+        <img src="#" alt="">
+      </template>
+      <template #right>
+        <van-button type="default" v-on:click="btnclick" >
+          <van-icon name="wap-nav" size="28"  color="#333"/>
+
+        </van-button>
+      </template>
+    </van-nav-bar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Vue from "vue";
+import { Overlay,NavBar,Icon,Button } from 'vant';
+
+Vue.use(Overlay);
+Vue.use(NavBar);
+Vue.use(Icon);
+Vue.use(Button);
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+
+  },
+    methods: {
+        btnclick(e){
+          console.log(e)
+      }
+    }
 }
 </script>
 
