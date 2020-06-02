@@ -16,6 +16,7 @@
         </van-button>
       </template>
     </van-nav-bar>
+      <h1 v-if="seen">123</h1>
   </div>
 </template>
 
@@ -30,11 +31,17 @@ Vue.use(Button);
 
 export default {
   name: 'app',
+    data:function () {
+        return {
+            seen:false
+        }
+    },
   components: {
 
   },
     methods: {
         btnclick(e){
+            this.seen=!this.seen;
           console.log(e)
       }
     }
